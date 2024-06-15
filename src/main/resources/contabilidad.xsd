@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="t4is.uv.mx/contabilidad"
+xmlns:tns="t4is.uv.mx/contabilidad" elementFormDefault="qualified">
+  <xs:element name="SolicitarPagoRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="NombreProducto" type="xs:string"/>
+        <xs:element name="Cantidad" type="xs:int"/>
+        <xs:element name="Precio" type="xs:double"/>
+        <xs:element name="FolioInventario" type="xs:string"/>
+        <xs:element name="PresupuestoDependencia" type="xs:double"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SolicitarPagoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Respuesta" type="xs:string"/>
+        <xs:element name="FolioContabilidad" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarPagoRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="FolioContabilidad" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarPagoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="PagoStatus" type="xs:string"/>
+        <xs:element name="Status" type="xs:boolean"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
